@@ -4,9 +4,10 @@
 #include "pch.h"
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n"; 
+using namespace std;
+
+int main() {
+    cout << "Hello World!\n"; 
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
