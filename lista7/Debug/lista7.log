@@ -1,0 +1,33 @@
+﻿  lista7.cpp
+c:\xampp\htdocs\tep_lab7\lista7\nodedynamic.h(101): warning C4018: ">=": niezgodność typu ze znakiem/bez znaku
+  c:\xampp\htdocs\tep_lab7\lista7\nodedynamic.h(100): note: podczas kompilowania funkcji składowej „<Nieznany>” klasy klasa <Nieznany>
+  c:\xampp\htdocs\tep_lab7\lista7\lista7.cpp(24): note: zobacz odwołanie do funkcji szablon; wystąpienie „NodeDynamic<T> *NodeDynamic<T>::getChild(int)” jest kompilowane
+          with
+          [
+              T=int
+          ]
+  c:\xampp\htdocs\tep_lab7\lista7\lista7.cpp(21): note: zobacz odwołanie do klasy klasa szablon; wystąpienie „NodeDynamic<T>” jest kompilowane
+          with
+          [
+              T=int
+          ]
+c:\xampp\htdocs\tep_lab7\lista7\nodedynamic.h(153): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  c:\xampp\htdocs\tep_lab7\lista7\nodedynamic.h(151): note: podczas kompilowania funkcji składowej „<Nieznany>” klasy klasa <Nieznany>
+  c:\xampp\htdocs\tep_lab7\lista7\treedynamic.h(51): note: zobacz odwołanie do funkcji szablon; wystąpienie „void NodeDynamic<T>::printAllBelow(void)” jest kompilowane
+          with
+          [
+              T=int
+          ]
+  c:\xampp\htdocs\tep_lab7\lista7\treedynamic.h(25): note: podczas kompilowania funkcji składowej „<Nieznany>” klasy klasa <Nieznany>
+  c:\xampp\htdocs\tep_lab7\lista7\lista7.cpp(15): note: zobacz odwołanie do funkcji szablon; wystąpienie „TreeDynamic<int>::TreeDynamic(void)” jest kompilowane
+  c:\xampp\htdocs\tep_lab7\lista7\lista7.cpp(15): note: zobacz odwołanie do klasy klasa szablon; wystąpienie „TreeDynamic<int>” jest kompilowane
+c:\xampp\htdocs\tep_lab7\lista7\nodedynamic.h(53): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  c:\xampp\htdocs\tep_lab7\lista7\nodedynamic.h(52): note: podczas kompilowania funkcji składowej „<Nieznany>” klasy klasa <Nieznany>
+  c:\xampp\htdocs\tep_lab7\lista7\lista7.cpp(65): note: zobacz odwołanie do funkcji szablon; wystąpienie „NodeDynamic<T>::~NodeDynamic(void)” jest kompilowane
+          with
+          [
+              T=int
+          ]
+  c:\xampp\htdocs\tep_lab7\lista7\treedynamic.h(30): note: podczas kompilowania funkcji składowej „<Nieznany>” klasy klasa <Nieznany>
+  c:\xampp\htdocs\tep_lab7\lista7\lista7.cpp(65): note: zobacz odwołanie do funkcji szablon; wystąpienie „TreeDynamic<int>::~TreeDynamic(void)” jest kompilowane
+  lista7.vcxproj -> C:\xampp\htdocs\TEP_lab7\Debug\lista7.exe

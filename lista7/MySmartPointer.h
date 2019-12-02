@@ -14,6 +14,7 @@ public:
 
 	T& operator *();
 	T* operator ->();
+	MySmartPointer<T>& operator= (const MySmartPointer<T> otherPointer);
 };
 
 //-----------------------------------------------------------------------------------------------
@@ -33,7 +34,7 @@ MySmartPointer<T>::MySmartPointer(const MySmartPointer& otherPointer) {
 
 template <typename T>
 MySmartPointer<T>::~MySmartPointer() {
-	if (this->counter->dec == 0) {
+	if (this->counter->dec() == 0) {
 		delete this->data;
 		delete this->counter;
 	}
@@ -48,3 +49,19 @@ template <typename T>
 T* MySmartPointer<T>::operator->() {
 	return this->data;
 }
+
+template<typename T>
+MySmartPointer<T>& MySmartPointer<T>::operator=(const MySmartPointer<T> otherPointer) {
+	if (this->data != nullptr) {
+		if (this->counter->dec() == 0) {
+			delete this->data;
+			delete this->counter;
+		}
+	}
+	this->data = otherPointer.data;
+	this->counter = otherPointer.counter;
+	this->counter->add();
+
+	return *this;
+}
+

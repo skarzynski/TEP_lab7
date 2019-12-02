@@ -2,12 +2,54 @@
 //
 
 #include "pch.h"
+#include "MySmartPointer.h"
+#include "TreeDynamic.h"
+
 #include <iostream>
 
 using namespace std;
 
+
 int main() {
-    cout << "Hello World!\n"; 
+    
+	TreeDynamic<int>* myTree = new TreeDynamic<int>();
+	TreeDynamic<int>* myTree2 = new TreeDynamic<int>();
+
+	MySmartPointer<TreeDynamic<int>> tree(myTree);
+	MySmartPointer<TreeDynamic<int>> tree2(myTree2);
+
+	tree->getRoot()->addNewChild();
+	tree->getRoot()->addNewChild();
+
+	tree->getRoot()->getChild(0)->setValue(1);
+	tree->getRoot()->getChild(1)->setValue(2);
+
+	tree->getRoot()->getChild(0)->addNewChild();
+	tree->getRoot()->getChild(0)->addNewChild();
+
+	tree->getRoot()->getChild(0)->getChild(0)->setValue(11);
+	tree->getRoot()->getChild(0)->getChild(1)->setValue(12);
+
+	tree->getRoot()->getChild(1)->addNewChild();
+	tree->getRoot()->getChild(1)->addNewChild();
+
+	tree->getRoot()->getChild(1)->getChild(0)->setValue(21);
+	tree->getRoot()->getChild(1)->getChild(1)->setValue(22);
+
+	tree->printTree();
+	cout << endl;
+
+	tree2->getRoot()->addNewChild();
+	tree2->getRoot()->getChild(0)->setValue(5);
+
+	tree2->printTree();
+	cout << endl;
+
+	tree = tree2;
+
+	tree->printTree();
+
+
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
