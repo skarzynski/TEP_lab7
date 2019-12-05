@@ -1,23 +1,30 @@
-#pragma once
+﻿#pragma once
 
 #include "RefCounter.h"
 
+#include <iostream>
+
+using namespace std;
+
 template <typename T> class MySmartPointer {
 private:
-	RefCounter* counter;
-	T* data;
+	RefCounter* counter;			//wskaźnik na licznik odwołań
+	T* data;						//wskaźnik na dane
 
 public:
-	MySmartPointer(T* data);
-	MySmartPointer(const MySmartPointer& otherPointer);
-	~MySmartPointer();
+	MySmartPointer(T* data);		//konstruktor przyjmujący wskaźnik na dane
+	MySmartPointer(const MySmartPointer& otherPointer);		//konstruktor kopiujący
+	~MySmartPointer();				//destruktor
 
-	T& operator *();
-	T* operator ->();
-	MySmartPointer<T>& operator= (const MySmartPointer<T> otherPointer);
+	void getStatus();				//wypisuje status wskaźnika
+
+	T& operator *();				//operator *
+	T* operator ->();				//operator ->
+	MySmartPointer<T>& operator= (const MySmartPointer<T> otherPointer);	//operator =
 };
 
 //-----------------------------------------------------------------------------------------------
+
 template <typename T>
 MySmartPointer<T>::MySmartPointer(T* data) {
 	this->data = data;
@@ -37,6 +44,18 @@ MySmartPointer<T>::~MySmartPointer() {
 	if (this->counter->dec() == 0) {
 		delete this->data;
 		delete this->counter;
+	}
+}
+
+template<typename T>
+void MySmartPointer<T>::getStatus() {
+	if (this->data != nullptr) {
+		cout << "Adres przechowywanych danych: " << this->data << endl;
+		cout << "Aktualna liczba odwolan: " << this->counter->get() << endl;
+		cout << "Maksymalna liczba odwolan: " << this->counter->getMax() << endl;
+	}
+	else {
+		cout << "Wskaznik nic nie przechowuje" << endl;
 	}
 }
 

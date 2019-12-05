@@ -1,14 +1,16 @@
-#pragma once
+ï»¿#pragma once
 
 class RefCounter {
 
 private:
-	int count;			//przechowuje aktualn¹ liczbê jednoczesnych odwo³añ do pamiêci
+	int count;			//przechowuje aktualnÂ¹ liczbÃª jednoczesnych odwoÂ³aÃ± do pamiÃªci
+	int max;			//przechowuje maksymalnÄ… liczbÄ™ jednoczesnych odwoÅ‚aÅ„ do pamiÄ™ci
 
 public:
 	RefCounter();		//konstruktor bezparametrowy
 
-	int add();			//inkrementuje licznik o 1 i zwraca wartoœæ licznika
-	int dec();			//dekrementuje licznik o 1 i zwraca wartoœæ licznika
-	int get();			//zwraca wartoœæ licznika
+	int add();			//inkrementuje licznik o 1 i zwraca wartoÅ“Ã¦ licznika
+	int dec();			//dekrementuje licznik o 1 i zwraca wartoÅ“Ã¦ licznika
+	int get();			//zwraca wartoÅ“Ã¦ licznika
+	int getMax();		//zwraca wartoÅ›Ä‡ max
 };

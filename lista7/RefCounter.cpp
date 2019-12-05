@@ -5,10 +5,14 @@ using namespace std;
 
 RefCounter::RefCounter() {
 	this->count = 0;
+	this->max = 0;
 }
 
 int RefCounter::add() {
-	return ++this->count;
+	if (++this->count > this->max) {
+		this->max = this->count;
+	}
+	return this->count;
 }
 
 int RefCounter::dec() {
@@ -17,4 +21,8 @@ int RefCounter::dec() {
 
 int RefCounter::get() {
 	return this->count;
+}
+
+int RefCounter::getMax() {
+	return this->max;
 }

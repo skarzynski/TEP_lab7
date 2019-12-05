@@ -45,7 +45,33 @@ int main() {
 	tree2->printTree();
 	cout << endl;
 
+	cout << endl << endl << "tree status" << endl << endl;
+	tree.getStatus();
+	cout << endl << endl << "tree2 status" << endl << endl;
+	tree2.getStatus();
+
 	tree = tree2;
+
+	cout << endl << endl << "tree status po przypisaniu do niego tree2" << endl << endl;
+	tree.getStatus();
+
+	MySmartPointer<TreeDynamic<int>> tree3 = tree;
+	MySmartPointer<TreeDynamic<int>> tree4 = tree;
+	MySmartPointer<TreeDynamic<int>> tree5 = tree;
+
+	cout << endl << endl << "tree status po stworzeniu kolejnych trzech kopii" << endl << endl;
+	tree.getStatus();
+
+	tree2 = NULL;
+	tree3 = NULL;
+	tree4 = NULL;
+	tree5 = NULL;
+
+	cout << endl << endl << "tree status po usunieciu wszystkich kopii" << endl << endl;
+	tree.getStatus();
+
+	cout << endl << endl << "tree2 status po usunieciu z niego danych" << endl << endl;
+	tree2.getStatus();
 
 	tree->printTree();
 
